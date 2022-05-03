@@ -1,0 +1,382 @@
+1..Write a Java program to perform basic Calculator operations.
+ans=// Java program for simple calculator
+
+import java.io.*;
+import java.lang.*;
+import java.lang.Math;
+import java.util.Scanner;
+public class BasicCalculator {
+
+	public static void main(String[] args)
+	{
+		// stores two numbers
+		double num1, num2;
+
+		// Take input from the user
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter the numbers");
+
+		// take the inputs
+		num1 = sc.nextDouble();
+
+		num2 = sc.nextDouble();
+
+		System.out.println("Enter the operator (+,-,*,/)");
+
+		char op = sc.next().charAt(0);
+
+		double o = 0;
+
+		switch (op) {
+
+		// case to add two numbers
+		case '+':
+
+			o = num1 + num2;
+
+			break;
+
+		// case to subtract two numbers
+		case '-':
+
+			o = num1 - num2;
+
+			break;
+
+		// case to multiply two numbers
+		case '*':
+
+			o = num1 * num2;
+
+			break;
+
+		// case to divide two numbers
+		case '/':
+
+			o = num1 / num2;
+
+			break;
+
+		default:
+
+			System.out.println("You enter wrong input");
+
+			break;
+		}
+
+		System.out.println("The final result:");
+
+		System.out.println();
+
+		// print the final result
+		System.out.println(num1 + " " + op + " " + num2
+						+ " = " + o);
+	}
+}
+
+
+2..Write a Java program to calculate Fibonacci Series up to n numbers.
+ans=class Main {
+  public static void main(String[] args) {
+
+    int n = 10, firstTerm = 0, secondTerm = 1;
+    System.out.println("Fibonacci Series till " + n + " terms:");
+
+    for (int i = 1; i <= n; ++i) {
+      System.out.print(firstTerm + ", ");
+
+      // compute the next term
+      int nextTerm = firstTerm + secondTerm;
+      firstTerm = secondTerm;
+      secondTerm = nextTerm;
+    }
+  }
+}
+
+
+3..Write a Java program to calculate a Factorial of a number.
+ans=class FactorialExample{  
+ public static void main(String args[]){  
+  int i,fact=1;  
+  int number=5;//It is the number to calculate factorial    
+  for(i=1;i<=number;i++){    
+      fact=fact*i;    
+  }    
+  System.out.println("Factorial of "+number+" is: "+fact);    
+ }  
+}
+
+
+4..Write a Java program to find out whether the given String is Palindrome or not.
+ans=public class Palindrome
+{
+    public static void main(String args[])
+    {
+        String a, b = "";
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter the string you want to check:");
+        a = s.nextLine();
+        int n = a.length();
+        for(int i = n - 1; i >= 0; i--)
+        {
+            b = b + a.charAt(i);
+        }
+        if(a.equalsIgnoreCase(b))
+        {
+            System.out.println("The string is palindrome.");
+        }
+        else
+        {
+            System.out.println("The string is not palindrome.");
+        }
+    }
+}
+
+
+5..Write a Java program to calculate Permutation and Combination of 2 numbers.
+ans=import java.util.Scanner;
+ 
+public class PermutationCombinationMain
+{
+    public static int fact(int num){
+        int fact=1, i;
+        for(i=1; i<=num; i++){
+            fact = fact*i;
+        }
+        return fact;
+    }
+    public static void main(String args[]){
+        int n, r;
+        Scanner scanner = new Scanner(System.in);
+ 
+        System.out.print("Enter Value of n : ");
+        n = scanner.nextInt();
+        System.out.print("Enter Value of r : ");
+        r = scanner.nextInt();
+ 
+        System.out.print("NCR is " +(fact(n)/(fact(n-r)*fact(r))));
+        System.out.print("\nNPR is " +(fact(n)/(fact(n-r))));
+    }
+}
+
+
+
+6..Write a program in Java to print Diamond Pattern.
+ans=import java.util.Scanner;
+public class Diamond
+{
+    public static void main(String args[]) 
+    {
+        int n, i, j, space = 1;
+        System.out.print("Enter the number of rows: ");
+        Scanner s = new Scanner(System.in);
+        n = s.nextInt();
+        space = n - 1;
+        for (j = 1; j <= n; j++) 
+        {
+            for (i = 1; i <= space; i++) 
+            {
+                System.out.print(" ");
+            }
+            space--;
+            for (i = 1; i <= 2 * j - 1; i++) 
+            {
+                System.out.print("*");                
+            }
+            System.out.println("");
+        }
+        space = 1;
+        for (j = 1; j <= n - 1; j++) 
+        {
+            for (i = 1; i <= space; i++) 
+            {
+             System.out.print(" ");
+            }
+            space++;
+            for (i = 1; i <= 2 * (n - j) - 1; i++) 
+            {
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+    }
+}
+
+
+7..Write a Java Program to reverse the letters present in the given String.
+ans=import java.io.*;
+
+import java.util.Scanner;
+ 
+
+class GFG {
+
+    public static void main (String[] args) {
+
+       
+
+        String str= "Geeks", nstr="";
+
+        char ch;
+
+       
+
+      System.out.print("Original word: ");
+
+      System.out.println("Geeks"); //Example word
+
+       
+
+      for (int i=0; i<str.length(); i++)
+
+      {
+
+        ch= str.charAt(i); //extracts each character
+
+        nstr= ch+nstr; //adds each character in front of the existing string
+
+      }
+
+      System.out.println("Reversed word: "+ nstr);
+
+    }
+}
+
+
+8..Write a Java Program to check whether the given array is Mirror Inverse or not.
+ans=// Java implementation of the approach
+
+public class GFG {
+ 
+
+    // Function that returns true if
+
+    // the array is mirror-inverse
+
+    static boolean isMirrorInverse(int arr[])
+
+    {
+
+        for (int i = 0; i < arr.length; i++) {
+ 
+
+            // If condition fails for any element
+
+            if (arr[arr[i]] != i)
+
+                return false;
+
+        }
+ 
+
+        // Given array is mirror-inverse
+
+        return true;
+
+    }
+ 
+
+    // Driver code
+
+    public static void main(String[] args)
+
+    {
+
+        int arr[] = { 1, 2, 3, 0 };
+
+        if (isMirrorInverse(arr))
+
+            System.out.println("Yes");
+
+        else
+
+            System.out.println("No");
+
+    }
+}
+
+
+
+9..Write a Java program to remove elements from an ArrayList
+
+ans=// Java program to Remove Elements from ArrayList
+// Using remove() method by indices
+
+// Importing required classes
+import java.util.ArrayList;
+import java.util.List;
+
+// Main class
+public class GFG {
+	// Main driver method
+	public static void main(String[] args)
+	{
+		// Creating an object of List interface with
+		// reference to ArrayList class
+		List<Integer> al = new ArrayList<>();
+
+		// Adding elements to our ArrayList
+		// using add() method
+		al.add(10);
+		al.add(20);
+		al.add(30);
+		al.add(1);
+		al.add(2);
+
+		// Printing the current ArrayList
+		System.out.println(al);
+
+		// This makes a call to remove(int) and
+		// removes element 20
+		al.remove(1);
+
+		// Now element 30 is moved one position back
+		// So element 30 is removed this time
+		al.remove(1);
+
+		// Printing the updated ArrayList
+		System.out.println(al);
+	}
+}
+
+
+
+
+10..Write a Java Program to find the Transpose of a given Matrix.
+ans=public class Transpose    
+{    
+    public static void main(String[] args) {    
+        int rows, cols;    
+            
+        //Initialize matrix a    
+          int a[][] = {    
+                          {1, 2, 3},    
+                          {4, 5, 6},    
+                          {7, 8, 9}    
+                       };    
+              
+          //Calculates number of rows and columns present in given matrix    
+          rows = a.length;    
+        cols = a[0].length;    
+            
+        //Declare array t with reverse dimensions    
+        int t[][] = new int[cols][rows];    
+            
+        //Calculates transpose of given matrix    
+        for(int i = 0; i < cols; i++){    
+            for(int j = 0; j < rows; j++){   
+              //Converts the row of original matrix into column of transposed matrix    
+                t[i][j] = a[j][i];    
+            }    
+        }    
+        
+        System.out.println("Transpose of given matrix: ");    
+        for(int i = 0; i < cols; i++){    
+            for(int j = 0; j < rows; j++){    
+               System.out.print(t[i][j] + " ");    
+            }    
+            System.out.println();    
+        }    
+    }    
+}
